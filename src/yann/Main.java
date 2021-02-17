@@ -9,8 +9,8 @@ public class Main {
 
     public static void main (String[] args) throws IOException {
 
-        String line1 = readFile();
-        //String line1 = "5 1 2 1";
+        //String line1 = readFile();
+        String line1 = "7 2 2 2";
         String[] line = line1.split(" ");
         int nbPizza = Integer.parseInt(line[0]);
         int nb2 = Integer.parseInt(line[1]);
@@ -55,7 +55,7 @@ public class Main {
             //si le nombre n'set pas divisible par 3
             livre2 --;
             betc= betc + 2;
-            livre3 = betc % 3;
+            livre3 = betc / 3;
         }
 
         livre4 = (pizza - 2 * livre2 - 3 * livre3)/4;
@@ -69,12 +69,25 @@ public class Main {
             tmp--;
         }
 
-        //TODO verification avec le nombre d'équipe presente
+        System.out.println("a "+livre2);
+        System.out.println("b "+livre3);
+        System.out.println("c "+livre4);
+
+        while (livre4>team4){
+            livre4--;
+            livre2=livre2+2;
+        }
+
+        while (livre2>team2){
+            livre2=livre2-3;
+            livre3=livre3+2;
+        }
 
         int livre[] = {livre2,livre3,livre4};
 
         return livre;
     }
+
 
 
     public static String readFile() throws IOException {
