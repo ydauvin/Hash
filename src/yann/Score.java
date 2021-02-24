@@ -9,38 +9,38 @@ public class Score {
 
     public int score =0;
 
-    public void Calcul() throws IOException {
+    public void Calcul(String input) throws IOException {
         /*tableau des ingredients des pizza*/
-        ArrayList<ArrayList<String>> pizza = readPizzaFile("a");
+        ArrayList<ArrayList<String>> pizza = readPizzaFile(input);
         for(int i=0;i<pizza.size();i++){
             if(pizza.get(i)!=null) {
-                System.out.println(pizza.get(i));
+                //System.out.println(pizza.get(i));
             }
         }
-        System.out.println("===========");
+        //System.out.println("===========");
 
         /*tableau pizza donne par equie*/
-        ArrayList<ArrayList<String>> pizzaGive = readDeliveryFile("a");
-        //System.out.println(pizzaGive);
+        ArrayList<ArrayList<String>> pizzaGive = readDeliveryFile(input);
+        ////System.out.println(pizzaGive);
         for (int i=0;i<pizzaGive.size();i++){
             if(pizzaGive!=null){
-//                System.out.println(i+" |  "+pizzaGive.get(i));
+//                //System.out.println(i+" |  "+pizzaGive.get(i));
                 ArrayList<String> pizzaTeam = pizzaGive.get(i);
                 ArrayList<String> listIngredient = new ArrayList<>();
                 if (pizzaTeam != null) {
                     for(int j=0;j<pizzaTeam.size();j++){
                         ArrayList<String> list = pizza.get(Integer.parseInt(pizzaTeam.get(j)));
                         for(int k=0;k<list.size();k++){
-                            System.out.print(list.get(k)+" ");
+                            //System.out.print(list.get(k)+" ");
                             if(!listIngredient.contains(list.get(k))){
                                 listIngredient.add(list.get(k));
                             }
                         }
-                        System.out.print(" | ");
+                        //System.out.print(" | ");
                         //listIngredient.add()
-                        //System.out.println("Pizza n°"+ pizzaTeam.get(j) +" : "+ pizza.get(Integer.parseInt(pizzaTeam.get(j))));
+                        ////System.out.println("Pizza n°"+ pizzaTeam.get(j) +" : "+ pizza.get(Integer.parseInt(pizzaTeam.get(j))));
                     }
-                    System.out.println("");
+                    ////System.out.println("");
                     score=score+(listIngredient.size()*listIngredient.size());
                 }
             }
