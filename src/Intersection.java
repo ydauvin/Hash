@@ -6,7 +6,13 @@ public class Intersection {
     public ArrayList<Rue> in;
     public ArrayList<Rue> out;
 
-    public void intersection(int id) {
+    public Intersection(String id) {
+        this.id= Integer.parseInt(id);
+        this.in = new ArrayList<Rue>();
+        this.out = new ArrayList<Rue>();
+    }
+
+    public void Intersection(int id) {
         this.id=id;
         this.in = new ArrayList<Rue>();
         this.out = new ArrayList<Rue>();
@@ -41,6 +47,11 @@ public class Intersection {
     }
 
     public void addRueOut(Rue rue){
+        this.out.add(rue);
+    }
+
+    public void addRueOut(String name, int time) {
+        Rue rue = new Rue(name,time);
         this.out.add(rue);
     }
 }
