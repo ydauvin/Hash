@@ -1,4 +1,4 @@
-package yann;
+package test;
 
 import java.io.*;
 import java.util.ArrayList;
