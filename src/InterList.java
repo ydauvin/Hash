@@ -9,7 +9,7 @@ public class InterList {
 
     public Intersection getbyid(int id){
         for (int i = 0; i < intersections.size(); i++) {
-            Intersection inter = this.intersections.get(i)
+            Intersection inter = this.intersections.get(i);
             if (inter.getId() == id){
                 return inter;
                 break;
