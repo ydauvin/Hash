@@ -1,8 +1,6 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class ReadWrite {
 
@@ -53,5 +51,23 @@ public class ReadWrite {
         }
         in.close();
     }
+
+    public static void CreateFile(String output) throws IOException {
+        try {
+            File file = new File("output/"+output+".txt");
+            file.delete();
+        }catch (Exception e){
+
+        }
+        new File("output/"+output+".txt").createNewFile();
+    }
+
+    public static void write(String output,String a) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("output/"+output+".txt", true));
+        writer.append(a);
+        writer.close();
+    }
+
+
 
 }
