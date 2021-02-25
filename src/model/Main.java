@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static InterList interlist = new InterList();
-    public static String file = "b";
+    public static String file = "f";
     public static void main (String[] args) throws IOException {
         ReadWrite.readFile(file);
         ArrayList<Intersection> inter = interlist.getIntersections();
@@ -34,10 +34,6 @@ public class Main {
             }
             System.out.println("=======================");
         }*/
-
-        System.out.println(interlist.getbyid(629).getIn().size());
-        System.out.println(interlist.getbyid(629).getOut().size());
-        System.out.println(interlist.getbyid(629).getOut().get(0).name);
 
         ReadWrite.CreateFile(file);
         ReadWrite.write(file,inter.size()+"\n");

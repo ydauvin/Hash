@@ -25,9 +25,6 @@ public class ReadWrite {
                 String name = lineCourrant[2];
                 int time = Integer.parseInt(lineCourrant[3]);
 
-                if(idout==629){
-                    System.out.println(629);
-                }
                 if(!interlist.ishere(idout)){
                     Intersection intersection = new Intersection(idout);
                     intersection.addRueOut(name, time);
@@ -37,9 +34,6 @@ public class ReadWrite {
                     interlist.getbyid(idout).addRueOut(name, time);
                 }
 
-                if(idint==629){
-                    System.out.println(629);
-                }
                 if(!interlist.ishere(idint)){
                     Intersection intersection = new Intersection(idint);
                     intersection.addRueIn(name, time);
