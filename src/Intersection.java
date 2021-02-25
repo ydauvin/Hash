@@ -6,7 +6,7 @@ public class Intersection {
     public ArrayList<Rue> in;
     public ArrayList<Rue> out;
 
-    public static void intersection(int id) {
+    public void intersection(int id) {
         this.id=id;
         this.in = new ArrayList<Rue>();
         this.out = new ArrayList<Rue>();
