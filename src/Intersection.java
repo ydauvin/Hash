@@ -12,7 +12,7 @@ public class Intersection {
         this.out = new ArrayList<Rue>();
     }
 
-    public void Intersection(int id) {
+    public Intersection(int id) {
         this.id=id;
         this.in = new ArrayList<Rue>();
         this.out = new ArrayList<Rue>();
@@ -53,5 +53,10 @@ public class Intersection {
     public void addRueOut(String name, int time) {
         Rue rue = new Rue(name,time);
         this.out.add(rue);
+    }
+
+    public void addRueIn(String name, int time) {
+        Rue rue = new Rue(name,time);
+        this.in.add(rue);
     }
 }

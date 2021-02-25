@@ -32,6 +32,10 @@ public class InterList {
         return exist;
     }
 
+    public void add(Intersection inter){
+        this.intersections.add(inter);
+    }
+
     public ArrayList<Intersection> getIntersections() {
         return intersections;
     }
