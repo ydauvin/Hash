@@ -35,4 +35,12 @@ public class Intersection {
     public void setOut(ArrayList<Rue> out) {
         this.out = out;
     }
+
+    public void addRueIn(Rue rue){
+        this.in.add(rue);
+    }
+
+    public void addRueOut(Rue rue){
+        this.out.add(rue);
+    }
 }
