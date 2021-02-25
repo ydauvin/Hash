@@ -1,8 +1,6 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class ReadWrite {
 
@@ -27,14 +25,15 @@ public class ReadWrite {
                 int idint = Integer.parseInt(lineCourrant[1]);
                 String name = lineCourrant[2];
                 int time = Integer.parseInt(lineCourrant[3]);
+
                 if(!interlist.ishere(idout)){
                     Intersection intersection = new Intersection(idout);
                     intersection.addRueOut(name, time);
                     interlist.add(intersection);
                 }
                 else{
-                    Intersection inter = interlist.getbyid(idout);
-                    inter.addRueOut(name, time);
+                    interlist.getbyid(idout).addRueOut(name, time);
+                    System.out.println(line);
                 }
 
                 if(!interlist.ishere(idint)){
@@ -43,15 +42,32 @@ public class ReadWrite {
                     interlist.add(intersection);
                 }
                 else{
-                    Intersection inter = interlist.getbyid(idout);
-                    inter.addRueIn(name, time);
+                    interlist.getbyid(idint).addRueIn(name, time);
+                    System.out.println(line);
                 }
 
             }
             nb++;
         }
         in.close();
-        Main.interlist = interlist;
     }
+
+    public static void CreateFile(String output) throws IOException {
+        try {
+            File file = new File("output/"+output+".txt");
+            file.delete();
+        }catch (Exception e){
+
+        }
+        new File("output/"+output+".txt").createNewFile();
+    }
+
+    public static void write(String output,String a) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("output/"+output+".txt", true));
+        writer.append(a);
+        writer.close();
+    }
+
+
 
 }
