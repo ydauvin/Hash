@@ -11,7 +11,7 @@ public class Main {
         ReadWrite.readFile("a");
         ArrayList<Intersection> inter = interlist.getIntersections();
 
-        System.out.println("Rue sortante");
+        System.out.println("Rue entrant");
         for(int i=0;i<inter.size();i++){
             Intersection intersection = inter.get(i);
             System.out.println(intersection.id);
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|");
         System.out.println("");
 
-        System.out.println("Rue entrante");
+        System.out.println("Rue sortant");
         for(int i=0;i<inter.size();i++){
             Intersection intersection = inter.get(i);
             System.out.println(intersection.id);

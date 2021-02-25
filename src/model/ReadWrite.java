@@ -27,14 +27,15 @@ public class ReadWrite {
                 int idint = Integer.parseInt(lineCourrant[1]);
                 String name = lineCourrant[2];
                 int time = Integer.parseInt(lineCourrant[3]);
+
                 if(!interlist.ishere(idout)){
                     Intersection intersection = new Intersection(idout);
                     intersection.addRueOut(name, time);
                     interlist.add(intersection);
                 }
                 else{
-                    Intersection inter = interlist.getbyid(idout);
-                    inter.addRueOut(name, time);
+                    interlist.getbyid(idout).addRueOut(name, time);
+                    System.out.println(line);
                 }
 
                 if(!interlist.ishere(idint)){
@@ -43,15 +44,14 @@ public class ReadWrite {
                     interlist.add(intersection);
                 }
                 else{
-                    Intersection inter = interlist.getbyid(idout);
-                    inter.addRueIn(name, time);
+                    interlist.getbyid(idint).addRueIn(name, time);
+                    System.out.println(line);
                 }
 
             }
             nb++;
         }
         in.close();
-        Main.interlist = interlist;
     }
 
 }
