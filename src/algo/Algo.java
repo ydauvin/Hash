@@ -7,15 +7,22 @@ class Etat
 
 public class Algo 
 {
+    InterList inters
     ArrayList<Etat> reponse
     
-
+    public void Algo(Interlist inters)
+    {
+        this.inters=inters
+    }
  public void algotrèsnaif() 
  {
-    fin = True;
+    fin = true;
     while(fin)
     {
-
+        for inter in this.inters.getIn()
+        {
+            
+        }
     }
     //Pour chaque temps
         //Pour chaque noeud
