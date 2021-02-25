@@ -1,3 +1,5 @@
+package model;
+
 public class Rue {
     public String name;
     public int tmps;
