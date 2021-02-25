@@ -15,10 +15,9 @@ public class ReadWrite {
         {
             String[] lineCourrant = line.split(" ");
             if(nb==0){
-                nbInter = Integer.parseInt(lineCourrant[1]);
+                nbInter = Integer.parseInt(lineCourrant[2]);
             }
-            else if(nb>nbInter+1){
-                System.out.println("voiture");
+            else if(nb>nbInter){
             }
             else{
                 int idout = Integer.parseInt(lineCourrant[0]);
@@ -26,6 +25,9 @@ public class ReadWrite {
                 String name = lineCourrant[2];
                 int time = Integer.parseInt(lineCourrant[3]);
 
+                if(idout==629){
+                    System.out.println(629);
+                }
                 if(!interlist.ishere(idout)){
                     Intersection intersection = new Intersection(idout);
                     intersection.addRueOut(name, time);
@@ -33,9 +35,11 @@ public class ReadWrite {
                 }
                 else{
                     interlist.getbyid(idout).addRueOut(name, time);
-                    System.out.println(line);
                 }
 
+                if(idint==629){
+                    System.out.println(629);
+                }
                 if(!interlist.ishere(idint)){
                     Intersection intersection = new Intersection(idint);
                     intersection.addRueIn(name, time);
@@ -43,7 +47,6 @@ public class ReadWrite {
                 }
                 else{
                     interlist.getbyid(idint).addRueIn(name, time);
-                    System.out.println(line);
                 }
 
             }
